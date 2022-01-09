@@ -1,20 +1,20 @@
-var readlineSync = require("readline-sync");
-var chalk = require("chalk");
+const readlineSync = require("readline-sync");
+const chalk = require("chalk");
 
-var userName = readlineSync.question("Hi! What's your name?")
+const userName = readlineSync.question("Hi! What's your name?")
 
 console.log(chalk.cyan("Welcome "+chalk.blue.bold(userName)+ " ! to a quiz on how well you know "+chalk.blue.bold("Balaji")));
 
-var score = 0;
-var highScore = 0;
-var tryAgain = "1";
-var num = 1;                             
+let score = 0;
+let highScore = 0;
+let tryAgain = "1";
+let num = 1;                             
 while(tryAgain=="1")
 {
   //play fuction
   const play = (question, answer)=>
   {
-    var userAnswer = readlineSync.question(question);
+    const userAnswer = readlineSync.question(question);
     if(userAnswer === answer)
     {
       console.log(chalk.green("You are right!"));
@@ -28,7 +28,7 @@ while(tryAgain=="1")
     console.log("\n");
   }
 
-  var questionsL1 = [
+  const questionsL1 = [
     {question : "How old is balaji?",
     answer : "23" },
     {question : "Where does balaji stay?",
@@ -39,7 +39,7 @@ while(tryAgain=="1")
     answer : "masala dosa"}
     ];
 
-  var questionsL2 = [
+  const questionsL2 = [
     {question : "Which is balaji's favourite destination?",
     answer : "switzerland" },
     {question : "Where does balaji work?",
@@ -50,7 +50,7 @@ while(tryAgain=="1")
     answer : "bit"}
     ];
 
-  var questionsL3 = [
+  const questionsL3 = [
     {question : "What is balaji's Nick name?",
     answer : "vishruth" },
     {question : "Which is balaji's favourite sport?",
@@ -81,7 +81,7 @@ while(tryAgain=="1")
   else
   {
     console.log("\n");
-    var req = 4-score
+    const req = 4-score
     console.log("You require "+req+" more point/s to unlock level 2");
   }
 
@@ -101,8 +101,8 @@ while(tryAgain=="1")
   else if(score>=4 && score<8)
   {
     console.log("\n");
-    var req1 = 8-score
-    console.log("You require "+req1+" more point/s to unlock the final level");
+    const req = 8-score
+    console.log("You require "+req+" more point/s to unlock the final level");
   }
 
   if(score === 10)
