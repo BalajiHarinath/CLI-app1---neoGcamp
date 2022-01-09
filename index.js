@@ -12,7 +12,7 @@ var num = 1;
 while(tryAgain=="1")
 {
   //play fuction
-  function play(question, answer)
+  const play = (question, answer)=>
   {
     var userAnswer = readlineSync.question(question);
     if(userAnswer === answer)
@@ -60,7 +60,7 @@ while(tryAgain=="1")
   console.log("\n");
   console.log("Level 1");
   console.log("\n");
-  for(var i=0; i<questionsL1.length; i++)
+  for(let i=0; i<questionsL1.length; i++)
   {
     play(questionsL1[i].question, questionsL1[i].answer);
   }
@@ -73,7 +73,7 @@ while(tryAgain=="1")
     console.log("Level 2");
     console.log("\n");
 
-      for(var i=0; i<questionsL2.length; i++)
+      for(let i=0; i<questionsL2.length; i++)
       {
         play(questionsL2[i].question, questionsL2[i].answer);
       }
@@ -93,7 +93,7 @@ while(tryAgain=="1")
     console.log("Final level");
     console.log("\n");23
 
-      for(var i=0; i<questionsL3.length; i++)
+      for(let i=0; i<questionsL3.length; i++)
       {
         play(questionsL3[i].question, questionsL3[i].answer);
       }
